@@ -1,0 +1,72 @@
+1、注册
+github官网地址：https://github.com/ 
+liudw0109
+13456914355@163.com
+123654_liudawei
+
+
+2、创建仓库 （Create a New Repository）
+免费用户只能建公共仓库
+
+
+3、windows电脑上安装一个git的客户端软件 --- Git Bash
+
+git for windows   //https://gitforwindows.org/
+
+4、配置本地GIT===本地和github连接
+1)先创建一个key
+ssh-keygen -t rsa -C "your_email@youremail.com"
+打开id_rsa.pub，复制里面的key； 
+回到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key
+
+2)需要设置username和email，因为github每次commit都会记录他们。
+   git config --global user.name "your name"
+   git config --global user.email "your_email@youremail.com"
+
+3) ssh -T git@github.com //验证成功，
+		  //输入yes就会看到：You've successfully authenticated, but GitHub does not provide shell access 。这就表示已成功连上github。
+
+
+4) git clone git@github.com:liudw0109/hello-world.git //下载git账户中的一个helloworld工程了
+
+
+5、本地代码上传流程
+1）clone下来的代码 增加文件上传
+git add test.txt
+git commit -m "sss"
+git push origin master
+
+2) 本地新建上传
+echo "# localnew" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin git@github.com:liudw0109/localnew.git
+git push -u origin master
+
+OR==>
+git remote add origin git@github.com:liudw0109/localnew.git
+git push -u origin master
+
+6、更新与合并
+1）要更新你的本地仓库至最新改动，执行：
+git pull 
+
+
+7、替换本地改动
+假如你操作失误（当然，这最好永远不要发生），你可以使用如下命令替换掉本地改动：
+git checkout -- <filename>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
